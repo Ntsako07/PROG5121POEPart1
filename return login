@@ -1,0 +1,9 @@
+// Return login message
+    public String returnLoginStatus(boolean status, String username) {
+        if (status) {
+            return "Welcome " + username + ", it is great to see you again!";
+        } else {
+            return "Username or password incorrect, please try again.";
+        }
+    }
+ 

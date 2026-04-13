@@ -1,0 +1,33 @@
+// MAIN METHOD
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Login login = new Login();
+
+        // Registration
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        System.out.print("Enter phone number: ");
+        String phone = scanner.nextLine();
+
+        boolean registered = login.registerUser(username, password, phone);
+
+        // Login
+        if (registered) {
+            System.out.print("\nEnter username: ");
+            String loginUser = scanner.nextLine();
+
+            System.out.print("Enter password: ");
+            String loginPass = scanner.nextLine();
+
+            boolean loginStatus = login.loginUser(loginUser, loginPass);
+            System.out.println(login.returnLoginStatus(loginStatus, loginUser));
+        }
+
+        scanner.close();
+    }
+}
